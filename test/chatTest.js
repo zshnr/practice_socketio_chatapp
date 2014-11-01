@@ -22,9 +22,11 @@ describe('Socket IO Chat App', function(){
 			browser.
 			fill('m', "Test message").
 			pressButton("Send", done)
-		expect(browser.text('ul').to.eql("Test message"));
+			expect(browser.text('ul')).to.eql("Test message");
+		});	
+	});
 
-		});
-		
+	it('Broadcasts a message to connected users when someone connects', function(){
+		expect(browser.text('ul')).to.eql("a user connected")
 	});
 });

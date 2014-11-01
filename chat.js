@@ -10,7 +10,10 @@ app.get('/', function(req, res){
 // app.use('/', express.static(__dirname + '/'));
 
 io.on('connection', function(socket){
-	console.log('a user connected');
+	// socket.emit('connect', "a user connected");
+	
+	// io.emit('connection', "a user connected");
+
 	socket.on('disconnect', function(){
 		console.log('a user disconnected');
 	});
